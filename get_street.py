@@ -6,9 +6,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 ## Get ids of segments
-r_segments = requests.get("https://telraam-api.net/v0/segments/active")
+saved_features = False
 
-segments = r_segments.json()['features']
+if not saved_features: 
+    r_segments = requests.get("https://telraam-api.net/v0/segments/active")
+    segments = r_segments.json()['features']
+    with open('segments.json', 'w') as file:
+        json.dump(segments, file)
+
+if saved_features: 
+    json_data = open('segments.json')
+    segments = json.load(json_data)
 
 segments_id = [s['properties']['id'] for s in segments]
 
@@ -34,7 +42,9 @@ for s in segments:
 
     geo_data = pd.concat((geo_data, tmp_df), axis=0)
 
-geo_data
 
 ## Mapping the segments
-plt.plot(geo_data['lon'], geo_data['lat'], '')
+import mplleaflet
+
+plt.plot(geo_data['lon'], geo_data['lat'], 'p')
+mplleaflet.show()
