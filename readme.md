@@ -1,7 +1,10 @@
 # DATATHON: FISHER's TUNAS
 
 ## Guidelines & Downloads
-* https://data.leuvenair.be/data-l.html
+
+* Leuven air data: https://data.leuvenair.be/data-l.html
+* Traffic sensors API documentation: https://documenter.getpostman.com/view/5886213/S11RLFhq/?version=latest
+* Leuven weather data: https://data.leuvenair.be/data-g.html
 
 ## Some data info
 
@@ -18,3 +21,7 @@
   * Uses GPS segment data along with traffic, PM and weather data
   * We could subset selection based on amounts of KMs, time of day etc. 
   * (Pedestrian + Bike)/Car ratio could a useful variable
+
+## Miscalleneous
+
+The Postman software can be installed on windows to easily try out API queries. 
