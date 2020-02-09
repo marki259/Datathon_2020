@@ -14,3 +14,4 @@
   * Genetic algo (or other heuristic for path selection)
   * Uses GPS segment data along with traffic, PM and weather data
   * We could subset selection based on amounts of KMs, time of day etc. 
+  * (Pedestrian + Bike)/Car ratio could a useful variable
