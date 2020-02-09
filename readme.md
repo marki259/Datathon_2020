@@ -1,5 +1,8 @@
 # DATATHON: FISHER's TUNAS
 
+## Guidelines & Downloads
+* https://data.leuvenair.be/data-l.html
+
 ## Some data info
 
 * Traffic per segment data API is pretty painless. 
