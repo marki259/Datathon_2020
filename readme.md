@@ -1,4 +1,4 @@
-# DATATHON: FISCHER's TUNAS
+# DATATHON: FISHER's TUNAS
 
 ## Some data info
 
