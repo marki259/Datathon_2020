@@ -42,9 +42,10 @@ for s in segments:
 
     geo_data = pd.concat((geo_data, tmp_df), axis=0)
 
-
 ## Mapping the segments
 import mplleaflet
 
 plt.plot(geo_data['lon'], geo_data['lat'], 'p')
 mplleaflet.show()
+
+## Mapping the segments for Leuven and around (e.g. Kessel-Lo)
