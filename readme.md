@@ -11,8 +11,8 @@
 * Traffic per segment data API is pretty painless.
 * The traffic data is very rare in Leuven, most in Kessel-lo and elsewhere in Belgium e.g. Antwerp.  
 * Apparently lot's of data but should be aggregated depending on our goals. 
-* Around 1 and a half year of historical data available (all-around). Something like that anyway. 
-* The airdata is concentrated in and around Leuven e.g. Kessel-lo and Heverlee. 
+* Around 1 and a half year of historical data available (all-around). Something like that anyway. Only about 7 months of weather data actually.
+* The airdata is concentrated in and around Leuven e.g. Kessel-lo and Heverlee. Similar dispersion with the weather sensors. 
 
 ## Project ideas (Bring it on)
 
