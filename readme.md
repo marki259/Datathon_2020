@@ -6,6 +6,7 @@
 * Traffic sensors API documentation: https://documenter.getpostman.com/view/5886213/S11RLFhq/?version=latest
 * traffic.csv uploaded
 * Leuven weather data: https://data.leuvenair.be/data-g.html
+* Great resource for leaflet in R: https://rstudio.github.io/leaflet/
 
 ## Some data info
 
