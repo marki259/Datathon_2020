@@ -4,6 +4,7 @@
 
 * Leuven air data: https://data.leuvenair.be/data-l.html
 * Traffic sensors API documentation: https://documenter.getpostman.com/view/5886213/S11RLFhq/?version=latest
+* traffic.csv uploaded
 * Leuven weather data: https://data.leuvenair.be/data-g.html
 
 ## Some data info
