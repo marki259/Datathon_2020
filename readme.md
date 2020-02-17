@@ -30,6 +30,8 @@ This idea is scrapped (not enough data in Leuven, but mbe elsewhere?)
  * There are very few traffic sensor in Leuven itself, but we can use info from Kessel-Lo or similar regions to train model
  * The weather and pollution at a traffic sensor could be treated as weighted mean based on distance of that traffic sensor from the neighboring weather and pollution sensors (euclidean distance of x and y gps (I don't think we have to correct for earth rotation for small distances)
  * For the map, it probably wouldn't be to hard to allow filtering of predictions for pedestrian and bikes (see Telraam)
+ * Simple way to populate streets of Leuven: Large random sample of Leuven adresses, then we run a geocode e.g. ggmap api
+ on these adresses. These observations can then be used to make predictions. 
 
 ## Miscalleneous
 
