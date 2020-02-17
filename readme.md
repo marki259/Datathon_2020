@@ -26,7 +26,7 @@ This idea is scrapped (not enough data in Leuven, but mbe elsewhere?)
   * We could subset selection based on amounts of KMs, time of day etc. 
   * (Pedestrian + Bike)/Car ratio could a useful variable
  
-2. Predicting pedestrian and bike traffic in Leuven from weather and 2.5 pollution data
+2. Predicting pedestrian and bike traffic in Leuven from weather and 2.5 pollution data (we don't even have to predict, even simpler is just providing estimation for past quantities)
 There are very few traffic sensor in Leuven itself, but we can use info from Kessel-Lo or similar regions
  * There are very few traffic sensor in Leuven itself, but we can use info from Kessel-Lo or similar regions to train model
  * The weather and pollution at a traffic sensor could be treated as weighted mean based on distance of that traffic sensor from the neighboring weather and pollution sensors (euclidean distance of x and y gps (I don't think we have to correct for earth rotation for small distances)
