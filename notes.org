@@ -1,0 +1,8 @@
+* Recommended R packages
+1. SF object in Rstudio
+2. tm_shape function (similar to ggplot2)
+3. Leaflet map in R
+4. geosphere function (point to lines)
+5. spatial join: nngeo (stjoin function)
+6. spacetime package (time with dots plot, heatmap etc.)
+7. rggobi package
