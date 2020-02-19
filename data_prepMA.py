@@ -27,7 +27,7 @@ def gen_time(year, month, day, hour):
     return(date)
 
 def setPeak(hour):
-    if hour <= 10 or hour >= 15:
+    if hour <= 10 or hour >= 16:
         return("Peak")
     else:
         return("Slow")
@@ -37,15 +37,22 @@ full_dat = pd.DataFrame()
 ## Building traffic dataset
 for segment in segment_ids:
     print(str(segment))
-    for month in np.arange(11, 14):
-        year = 2019 + (month - 1)//12
-        month = month % 12
+    for month in np.arange(11, 15):
+        year_begin = 2019 + (month - 1)//12
+        month_begin = month % 12
+        if month_begin == 0:
+            month_begin = 12
+        
+        year_end = 2019 + month//12
+        month_end = (month + 1) % 12
+        if month_end == 0:
+            month_end = 12
 
         segment_id = segment
         url = "https://telraam-api.net/v0/reports/" + str(segment_id)
 
-        param = {"time_start":gen_time(year, month, 1, 10), 
-         "time_end":gen_time(year, month + 1, 1, 10), 
+        param = {"time_start":gen_time(year_begin, month_begin, 1, 10), 
+         "time_end":gen_time(year_end, month_end, 1, 10), 
          "level":"segments",
          "format": "per-hour"}
         headers = {'Content-Type': 'application/json'}

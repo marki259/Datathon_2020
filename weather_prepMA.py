@@ -19,12 +19,16 @@ garmon_dat['DATEUTC'] = pd.to_datetime(garmon_dat['DATEUTC'])
 garmon_dat['period'] = garmon_dat['DATEUTC'].map(lambda x: setPeak(x.hour))
 garmon_dat['date'] = garmon_dat['DATEUTC'].dt.date
 
+kept_var = ['ALT', 'TEMPC', 'HUMIDITY', 'WINDCHILLF',  
+            'WINDSPEEDKMH', 'RAININ', 'SOLARRADIATION']
+
 agg_dict = {'LAT':'first', 'LON':'first', 'ALT':'first', 
-'TEMPC':'mean', 'HUMIDITY':'mean', 'WINDCHILLF':'mean', 'WINDSPEEDKMH':'mean'}
+'TEMPC':'median', 'HUMIDITY':'mean', 'WINDCHILLF':'mean', 'WINDSPEEDKMH':'mean',
+'RAININ':'mean', 'SOLARRADIATION':'mean'}
 
 garmon_dat = garmon_dat.groupby(['ID', 'date', 'period']).agg(agg_dict).reset_index()
 
-garmon_dat.to_csv('garmonOUT.csv', index='False')
+garmon_dat.to_csv('garmonOUT.csv', index=False)
 
 garmon_dat = pd.read_csv('garmonOUT.csv')
 
@@ -76,11 +80,11 @@ for i in range(n):
     
     wghts = 1/np.array(garmon_sub['Dist'])
     c = np.sum(wghts)
-    garmon_variates = garmon_sub[['ALT', 'TEMPC', 'HUMIDITY', 'WINDCHILLF', 'WINDSPEEDKMH']]
+    garmon_variates = garmon_sub[kept_var]
     
     agg_variates = garmon_variates.apply(lambda x: np.sum(x*wghts/c))
     agg_variates = np.array(agg_variates).ravel()
-    cols = ['ALT', 'TEMPC', 'HUMIDITY', 'WINDCHILLF', 'WINDSPEEDKMH']
+    cols = kept_var
     
     if garmon_sub.shape[0] > 0:
         row_dict = pd.DataFrame(agg_variates.reshape(1, -1))
@@ -100,3 +104,17 @@ weather_columns = weather_columns.drop('index', axis=1)
 tw_dat = pd.concat((traffic_dat, weather_columns), axis=1)
 
 tw_dat.to_csv('trafficWeather_dat.csv', index=False)
+
+tw_dat.head(20)
+
+## Debugging
+np.histogram(np.array(tw_dat['date'].astype(str)).ravel())
+
+np.unique(tw_dat['date'])
+
+np.unique(garmon_dat['date'])
+
+np.unique(traffic_dat['date'])
+
+a = np.where(pd.isna(weather_columns['ALT']))
+garmon_dat['date'].iloc[a]
