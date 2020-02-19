@@ -108,4 +108,4 @@ full_dat['segment_id'] = full_dat['segment_id'].astype(int)
 
 traffic_dat = full_dat.merge(gps_dat, on='segment_id')
 
-traffic_dat.to_csv('trafficDAT.csv')
+traffic_dat.to_csv('trafficDAT.csv', index=False)
